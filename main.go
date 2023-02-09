@@ -8,8 +8,11 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/briandowns/spinner"
+	"github.com/common-nighthawk/go-figure"
 )
 
 func main() {
@@ -19,17 +22,16 @@ func main() {
 	var Green = "\033[32m"
 	var Red = "\033[31m"
 
-	fmt.Println(`
+	//logo
+	logo := figure.NewColorFigure("Lyript", "univers", "cyan", true)
+	logo.Scroll(2000, 100, "right")
+	logo.Print()
+	fmt.Println("Welcome to Lyript, a simple lyrics finder written in Go!")
 
-	 _            _       _
-	| |_   _ _ __(_)_ __ | |_
-	| | | | | '__| | '_ \| __|
-	| | |_| | |  | | |_) | |_
-	|_|\__, |_|  |_| .__/ \__|
-	   |___/       |_|
+	time.Sleep(1 * time.Second)
 
-	`)
 	//input
+	fmt.Println("")
 	fmt.Println("Enter the artist name: ")
 	scanner.Scan()
 	artist = scanner.Text()
@@ -48,9 +50,18 @@ func main() {
 
 	url := "https://azlyrics.com/lyrics/" + artist + "/" + song + ".html"
 
-	fmt.Println()
-	fmt.Println("Please wait...")
+	//spinner
+	s := spinner.New(spinner.CharSets[36], 100*time.Millisecond)
+	s.Start()
+	time.Sleep(1 * time.Second)
+	s.Stop()
 
+	//clear screen
+	fmt.Print("\033[H\033[2J")
+	fmt.Print("\033[H\033[2J")
+	fmt.Print("\033[H\033[2J")
+
+	//get lyrics
 	resp, err := http.Get(url)
 
 	if err != nil {
@@ -68,7 +79,7 @@ func main() {
 	if resp.StatusCode != 200 {
 		fmt.Println(Red + "Sorry, the song was not found. Please try again :(")
 	} else {
-
+		fmt.Println("Lyrics:")
 		doc, err := goquery.NewDocumentFromReader(resp.Body)
 
 		if err != nil {
