@@ -8,3 +8,6 @@ A simple lyrics finder written in Go!
 4. ./main
 
 and you're good to go :)
+
+
+✉️:mohamedfarrag@protonmail.com
