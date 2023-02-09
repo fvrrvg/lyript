@@ -7,16 +7,16 @@ a simple lyrics finder written in Go!
 1. Download golang from their official website <https://go.dev>
 2. Run Those Commands in the terminal :
 
-$ git clone <https://github.com/fvrrvg/lyript>
+   $ git clone <https://github.com/fvrrvg/lyript>
 
-$ cd lyript
+   $ cd lyript
 
-$ go build main.go
+   $ go build main.go
 
-$ mv main lyript
+   $ mv main lyript
 
-$ sudo cp lyript /usr/bin
+   $ sudo cp lyript /usr/bin
 
-$ lyript
+   $ lyript
 
 and you're good to go :)
