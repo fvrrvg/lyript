@@ -1,6 +1,6 @@
 # Lyript
 
- A golang program makes it easier to get your favourite songs' lyrics.
+a simple lyrics finder written in Go!
 
 ## Installation
 
