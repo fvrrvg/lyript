@@ -1,4 +1,4 @@
-module lyript2
+module lyript
 
 go 1.20
 
