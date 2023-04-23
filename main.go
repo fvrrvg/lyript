@@ -12,31 +12,21 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/briandowns/spinner"
-	"github.com/common-nighthawk/go-figure"
 )
 
 func main() {
 	var artist string
 	var song string
-	scanner := bufio.NewScanner(os.Stdin)
 	var Green = "\033[32m"
 	var Red = "\033[31m"
 
-	//logo
-	logo := figure.NewColorFigure("Lyript", "univers", "cyan", true)
-	logo.Scroll(2000, 100, "right")
-	logo.Print()
-	fmt.Println("Welcome to Lyript, a simple lyrics finder written in Go!")
+	scanner := bufio.NewScanner(os.Stdin)
 
-	time.Sleep(1 * time.Second)
-
-	//input
-	fmt.Println("")
-	fmt.Println("Enter the artist name: ")
+	//take input from user
+	fmt.Print("Artist: ")
 	scanner.Scan()
 	artist = scanner.Text()
-
-	fmt.Println("Enter the song name: ")
+	fmt.Print("Song: ")
 	scanner.Scan()
 	song = scanner.Text()
 
