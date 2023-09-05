@@ -14,10 +14,8 @@ a simple lyrics finder written in Go!
 
    $ cd lyript
 
-   $ go build main.go
+   $ go build -o lyript
 
-   $ mv ./main lyript
-   
    $ sudo cp lyript /usr/bin
 
    $ lyript
