@@ -1,4 +1,4 @@
-module lyript
+module github.com/fvrrvg/lyript
 
 go 1.20
 
