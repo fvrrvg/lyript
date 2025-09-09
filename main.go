@@ -62,7 +62,7 @@ func main() {
 
 	if resp.StatusCode != 200 {
 		x := getX()
-		url = fmt.Sprintf("https://search.azlyrics.com/?q=%s+%s&w=songs&x=%s", artist, song, x)
+		url = fmt.Sprintf("https://azlyrics.com/search/?q=%s+%s&w=songs&x=%s", artist, song, x)
 		s.Stop()
 		searchSong(url)
 	} else {
@@ -184,7 +184,7 @@ func getSong(url string) {
 	lines := strings.Split(doc.Text(), "\n")
 
 	for i, line := range lines {
-		for n := 175; n < 3000; n++ {
+		for n := 220; n < 3000; n++ {
 			if i == n && line != "" {
 				fmt.Println(Green + line)
 			}
